@@ -2,8 +2,6 @@
 
 > A sophisticated interactive system crafted to demonstrate the boundaries of **Software Engineering at the user interface**, focusing on **resource-efficient computing** and **system observability**.
 
----
-
 ### 🛠️ Technical Highlights
 
 This project pushes the limits of browser-based interaction, ensuring a high-fidelity experience without sacrificing performance or accessibility.
@@ -18,8 +16,6 @@ This project pushes the limits of browser-based interaction, ensuring a high-fid
   - **Real-time Health Monitoring**: Integrated a dashboard using the **PerformanceObserver API** to track FPS, LCP, and Jank.
   - **Data-First Optimization**: Demonstrates a commitment to maintaining a strict performance budget even with heavy visual assets.
 
----
-
 ### 🚀 Engineering Principles
 
 Focused on the core values required in high-stakes environments: Reliability, Scalability, and Clarity.
@@ -27,8 +23,6 @@ Focused on the core values required in high-stakes environments: Reliability, Sc
 - **Deterministic UI**: Designing interfaces that remain stable and predictable under high-frequency state updates or network instability.
 - **Technical Transparency**: Using **MDX** to transform complex architectural decisions and debugging logs (e.g., RN Bridge issues) into interactive, clear documentation.
 - **Clean & Modular Architecture**: Enforced strict type safety and decoupled logic to ensure the codebase remains as robust as a production-level platform.
-
----
 
 ### 🧰 Tech Stack
 
