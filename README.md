@@ -1,9 +1,9 @@
 # Myself
 
-## 🛠 Tech Stack
+### 🛠 Tech Stack
 - **Framework**: Next.js (App Router)
 - **Styling**: Tailwind CSS
 - **Deployment**: In Progress
 
-## 🔗 Links
+### 🔗 Links
 - **Live**: [your-domain.com](https://your-domain.com)
