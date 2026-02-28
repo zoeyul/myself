@@ -1,37 +1,57 @@
-## 🏗️ myself
+## myself
 
-> A sophisticated interactive system crafted to demonstrate the boundaries of **Software Engineering at the user interface**, focusing on **resource-efficient computing** and **system observability**.
+> Personal portfolio and technical blog. Built with Next.js 16, React 19, and TypeScript. Features real-time performance monitoring, interactive data visualizations, and browser-native WAAPI animations.
 
-### 🛠️ Technical Highlights
+### Live
 
-This project pushes the limits of browser-based interaction, ensuring a high-fidelity experience without sacrificing performance or accessibility.
+[your-domain.com](https://your-domain.com)
 
-- **Interactive 3D Environment (Three.js)**
-  - **Resource-Efficient Graphics**: Implemented smart throttlers and frame-skipping logic to minimize CPU/GPU overhead during idle states.
-  - **High-Precision Interaction**: Utilised **Raycasting** for intuitive object detection, ensuring fluid response to user inputs with zero lag.
-- **Predictable Animation System (WAAPI)**
-  - **Frame-Accurate Control**: Leveraged the **Web Animation API (WAAPI)** for sub-pixel motion control, ensuring consistent UI states across all browsers.
-  - **Main-Thread Optimization**: Orchestrated complex transitions to keep the main thread available for critical data processing and user interactions.
-- **Live Performance Observability**
-  - **Real-time Health Monitoring**: Integrated a dashboard using the **PerformanceObserver API** to track FPS, LCP, and Jank.
-  - **Data-First Optimization**: Demonstrates a commitment to maintaining a strict performance budget even with heavy visual assets.
+### Technical Highlights
 
-### 🚀 Engineering Principles
+- **Performance Monitoring Overlay**
+  Real-time Web Vitals (LCP, CLS, INP), FPS counter, and long task detection using the PerformanceObserver API. Toggleable overlay widget that monitors the site itself. Custom SVG sparkline visualizations — no charting library.
 
-Focused on the core values required in high-stakes environments: Reliability, Scalability, and Clarity.
+- **Interactive Data Visualization**
+  Tech stack and experience data rendered as custom SVG charts, built without D3 or any charting library. Demonstrates data visualization capability through practical, meaningful content.
 
-- **Deterministic UI**: Designing interfaces that remain stable and predictable under high-frequency state updates or network instability.
-- **Technical Transparency**: Using **MDX** to transform complex architectural decisions and debugging logs (e.g., RN Bridge issues) into interactive, clear documentation.
-- **Clean & Modular Architecture**: Enforced strict type safety and decoupled logic to ensure the codebase remains as robust as a production-level platform.
+- **Animation System (Web Animation API)**
+  Scroll-triggered section reveals, micro-interactions, and page transitions using browser-native `Element.animate()`. Respects `prefers-reduced-motion`. Zero animation library dependencies.
 
-### 🧰 Tech Stack
+- **MDX Blog**
+  Technical writing on performance and browser APIs, with syntax highlighting (Shiki) and custom interactive components.
 
-- **Framework**: Next.js (App Router)
-- **Animation/3D**: Web Animation API (WAAPI), Three.js
-- **Styling**: Tailwind CSS
-- **Observability**: PerformanceObserver API
-- **Content**: MDX (Interactive Technical Posts)
+### Engineering Approach
 
-### 🔗 Links
+- Server Components by default, `'use client'` only where browser APIs are needed
+- Custom hooks as the primary abstraction layer (`usePerformanceObserver`, `useFPS`, `useAnimation`)
+- Tested with Vitest + React Testing Library
+- Accessible: semantic HTML, keyboard navigation, skip links, ARIA labels, WCAG 2.1 AA contrast
 
-- **Live**: [your-domain.com](https://your-domain.com)
+### Architecture
+
+```
+src/
+├── app/            # Next.js App Router pages
+├── components/
+│   ├── layout/     # Header, Footer
+│   ├── sections/   # Hero, About, Projects, Experience, Contact
+│   ├── perf/       # Performance overlay (Sparkline, MetricCard)
+│   ├── blog/       # PostCard, MDX components
+│   └── ui/         # Shared primitives (Section, Badge, SkipLink)
+├── content/posts/  # MDX blog posts
+├── hooks/          # usePerformanceObserver, useFPS, useAnimation, useIntersection
+└── lib/            # Types, constants, MDX utilities
+```
+
+### Stack
+
+Next.js 16 (App Router) · React 19 · TypeScript (strict) · Tailwind CSS 4 · Web Animation API · PerformanceObserver API · MDX · Vitest
+
+### Development
+
+```bash
+pnpm install
+pnpm dev          # localhost:3000
+pnpm test         # vitest
+pnpm build        # production build
+```
