@@ -8,8 +8,8 @@
 
 ### Technical Highlights
 
-- **Performance Monitoring Overlay**
-  Real-time Web Vitals (LCP, CLS, INP), FPS counter, and long task detection using the PerformanceObserver API. Toggleable overlay widget that monitors the site itself. Custom SVG sparkline visualizations — no charting library.
+- **Performance Lab** (`/perf`)
+  Interactive page for exploring browser performance in real time. Monitoring dashboard (FPS, Web Vitals, Long Tasks) with custom SVG sparklines — no charting library. Includes load scenarios (heavy DOM manipulation, forced reflow, main thread blocking) that visibly impact the metrics, demonstrating both monitoring capability and understanding of what degrades performance.
 
 - **Interactive Data Visualization**
   Tech stack and experience data rendered as custom SVG charts, built without D3 or any charting library. Demonstrates data visualization capability through practical, meaningful content.
@@ -35,7 +35,7 @@ src/
 ├── components/
 │   ├── layout/     # Header, Footer
 │   ├── sections/   # Hero, About, Projects, Experience, Contact
-│   ├── perf/       # Performance overlay (Sparkline, MetricCard)
+│   ├── perf/       # Performance lab (Dashboard, Sparkline, Scenarios)
 │   ├── blog/       # PostCard, MDX components
 │   └── ui/         # Shared primitives (Section, Badge, SkipLink)
 ├── content/posts/  # MDX blog posts
